@@ -2,16 +2,35 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Daft Punk - Harder Better Faster Srtronger &laquo;- consolefun</title>
-	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+	<title>ConsoleFun - Daft Punk &quot;Harder Better Faster Srtronger&quot;</title>
+	<link rel="stylesheet" href="http://normalize-css.googlecode.com/svn/trunk/normalize.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<audio preload="auto" id="player"> 
-		<source src="daft_punk_-_harder_better_faster_stronger.ogg" type="audio/ogg"> 
-		<source src="daft_punk_-_harder_better_faster_stronger.mp3" type="audio/mp3"> 
-		Ololo
-	</audio>
+	<article>
 
+		<hgroup>
+			<h1>Console Fun</h1>
+			<h2>Not another example of data output</h2>
+		</hgroup>
+
+		<p>Open your browser's console and push the &quot;play&quot; button when ready.</p>
+		<p>You may adjust lyrics timing offset by the slider.</p>
+
+		<section>
+			<button id="play-btn">&#x25B6;</button>
+			<audio preload="auto" id="player">
+				<source src="daft_punk_-_harder_better_faster_stronger.ogg" type="audio/ogg"> 
+				<source src="daft_punk_-_harder_better_faster_stronger.mp3" type="audio/mp3"> 
+				Ololo
+			</audio>
+		</section>
+
+		<input id="offset-input" type="range" min="0" max="200" step="20" value="0" />
+		<p>Offset: <span id="offset-value">0</span> ms</p>
+	</article>
+	
 	<script src="consolefun-effect-custom1.js"></script>
 	<script src="consolefun.js"></script>
 	<script src="script.js"></script>

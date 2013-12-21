@@ -1,6 +1,9 @@
 ( function(){
 
 	var	player = document.getElementById( 'player' )
+	,	playBtn = document.getElementById( 'play-btn' )
+	,	offsetInput = document.getElementById( 'offset-input' )
+	,	offsetValue = document.getElementById( 'offset-value' )
 	,	lyrics = [
 			{ l: 'work', t: 0, e: 'inline' },
 			{ l: 'it', t: 250 },
@@ -75,13 +78,28 @@
 			{ l: 'never', t: 22354 },
 			{ l: 'over', t: 22839, e: '/table noclear error uppercase' }
 		]
+	,	cf = new ConsoleFun( lyrics )
 	;
 
-	player.oncanplaythrough = tempFunctionForPlayerToWorkProperly();
-	function tempFunctionForPlayerToWorkProperly(){
-		var cf = new ConsoleFun( lyrics, { lag: 0 } );
-		player.play();
-		cf.launch();
-	};
+	playBtn.addEventListener( 'click', function(){
+		if ( this.className != 'playing' ) {
+			this.className = 'playing';
+			player.play();
+			cf.launch();
+		} else {
+			this.className = '';
+			player.pause();
+			cf.pause();
+		}
+	} );
+	
+	player.addEventListener( 'ended', function(){
+		playBtn.className = '';
+	} );
+
+	offsetInput.addEventListener( 'change', function(){
+		offsetValue.innerHTML = this.value;
+		cf.lag( this.value );
+	} );
 
 } )();
