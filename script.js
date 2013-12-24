@@ -1,9 +1,8 @@
 ( function(){
 
-	var	player = document.getElementById( 'player' )
-	,	playBtn = document.getElementById( 'play-btn' )
-	,	offsetInput = document.getElementById( 'offset-input' )
-	,	offsetValue = document.getElementById( 'offset-value' )
+	var	$ = function( selector ){
+			return document.querySelectorAll( selector );
+		}
 	,	lyrics = [
 			{ l: 'work', t: 0, e: 'inline' },
 			{ l: 'it', t: 250 },
@@ -79,7 +78,31 @@
 			{ l: 'over', t: 22839, e: '/table noclear error uppercase' }
 		]
 	,	cf = new ConsoleFun( lyrics )
+	,	switcher = $( '#switcher' )[0]
+	,	sectionConfirm = $( '#confirm' )[0]
+	,	codeInput = $( '#code-input' )[0]
+	,	player = $( '#player' )[0]
+	,	playBtn = $( '#play-btn' )[0]
+	,	offsetInput = $( '#offset-input' )[0]
+	,	offsetValue = $( '#offset-value' )[0]
+	,	code = Math.floor( Math.random() * 100000 )	
 	;
+
+	function switchTo( sectionName ) {
+		switcher.className = 'show-' + sectionName;
+	}
+
+	if ( sessionStorage.getItem( 'consoleFunConfirmed' ) ) {
+		switchTo( 'launch' );
+	} else {
+		codeInput.addEventListener( 'keyup', function(){
+			if ( code == this.value ) {
+				sessionStorage.setItem( 'consoleFunConfirmed', true );
+				switchTo( 'launch' );
+			}
+		} );
+		console.log( code );
+	}
 
 	playBtn.addEventListener( 'click', function(){
 		if ( this.className != 'playing' ) {

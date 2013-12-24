@@ -15,20 +15,29 @@
 			<h2>Not another example of data output</h2>
 		</hgroup>
 
-		<p>Open your browser's console and push the &quot;play&quot; button when ready.</p>
-		<p>You may adjust lyrics timing offset by the slider.</p>
+		<div id="switcher" class="show-confirm">
+			<section id="confirm">
+				<p>You must open your browser's console window to watch Console Fun.</p>
+				<p>Confirm that you've done so by typing the code you see in your console here:</p>
+				<input type="text" id="code-input">
+			</section>
 
-		<section>
-			<button id="play-btn">&#x25B6;</button>
-			<audio preload="auto" id="player">
-				<source src="daft_punk_-_harder_better_faster_stronger.ogg" type="audio/ogg"> 
-				<source src="daft_punk_-_harder_better_faster_stronger.mp3" type="audio/mp3"> 
-				Ololo
-			</audio>
-		</section>
+			<section id="launch">
+				<p>Now you may press the &quot;play&quot; button.</p>
+				<p>You also may adjust lyrics timing offset by the slider.</p>
+				<div class="player-container">
+					<button id="play-btn">&#x25B6;</button>
+					<audio preload="auto" id="player">
+						<source src="daft_punk_-_harder_better_faster_stronger.ogg" type="audio/ogg"> 
+						<source src="daft_punk_-_harder_better_faster_stronger.mp3" type="audio/mp3"> 
+						Ololo
+					</audio>
+				</div>
+				<input id="offset-input" type="range" min="0" max="200" step="20" value="0" />
+				<p>Offset: <span id="offset-value">0</span> ms</p>
+			</section>
+		</div>
 
-		<input id="offset-input" type="range" min="0" max="200" step="20" value="0" />
-		<p>Offset: <span id="offset-value">0</span> ms</p>
 	</article>
 	
 	<script src="consolefun-effect-custom1.js"></script>

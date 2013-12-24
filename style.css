@@ -3,7 +3,7 @@ html {
 }
 body {
 	font: 15px/1.4 Arial, sans-serif;
-	color: #123123;
+	color: #111;
 	text-shadow: 0 1px 0 #fafafa;
 }
 article {
@@ -13,7 +13,7 @@ article {
 }
 hgroup {
 	margin-bottom: 27px;
-	padding-top: 120px;
+	padding-top: 100px;
 }
 h1 {
 	font-size: 44px;
@@ -23,36 +23,57 @@ h2 {
 	font-size: 18px;
 	font-weight: bold;	
 }
+
+.show-confirm #confirm,
+.show-launch #launch {
+	display: block;
+}
+
 section {
-	margin: 20px 0 30px;
+	display: none;
+	margin-top: 20px;
 }
-button {
-	margin: 0;
-	padding: 0;
-	font-size: 69px;
-	line-height: 1em;
-	color: #123123;
-	text-shadow: 0 1px 0 #fafafa;
-	cursor: pointer;
-	background: none;
-	border: 0 none;
-	outline: 0 none;
-}
-button.playing {
-	color: #ccc;
-}
-input[type="range"] {
-	margin-bottom: 20px;
-	-webkit-appearance: none !important;
-	background: #123123;
-	height: 3px;
-	box-shadow: 0 1px 0 #fafafa;
-	cursor: pointer;
-	outline: 0 none;
-}
-	input[type="range"]::-webkit-slider-thumb {
-		-webkit-appearance: button !important;
-		width: 7px;
-		height: 16px;
-		background-color: #123123;
+	#code-input {
+		width: 100px;
+		margin-top: 20px;
+		padding: 6px 5px;
+		font-size: 19px;
+		font-weight: bold;
+		text-align: center;
+		border-radius: 13px;
+		border: 1px solid #ccc;
+		outline: 0 none;
 	}
+	.player-container {
+		margin: 10px 0 20px;
+	}
+		button {
+			margin: 0;
+			padding: 0;
+			font-size: 69px;
+			line-height: 1em;
+			color: #111;
+			text-shadow: 0 1px 0 #fafafa;
+			cursor: pointer;
+			background: none;
+			border: 0 none;
+			outline: 0 none;
+		}
+		button.playing {
+			color: #ccc;
+		}
+	input[type="range"] {
+		margin-bottom: 16px;
+		-webkit-appearance: none !important;
+		background: #111;
+		height: 3px;
+		box-shadow: 0 1px 0 #fafafa;
+		cursor: pointer;
+		outline: 0 none;
+	}
+		input[type="range"]::-webkit-slider-thumb {
+			-webkit-appearance: button !important;
+			width: 7px;
+			height: 16px;
+			background-color: #111;
+		}
