@@ -37,7 +37,7 @@ Now you can perform:
 
 As simple as that.
 
-Buit-in effects
+Built-in effects
 ---------------
 
 ConsoleFun contains several built-in effects:
